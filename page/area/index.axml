@@ -1,0 +1,3 @@
+<view class="container" style="width:360px;height:220px;">
+  <dd-charts id="ddchart-dom-bar" canvasId="ddchart-bar" onDraw="onDraw"></dd-charts>
+</view>
