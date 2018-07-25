@@ -1,5 +1,6 @@
 # eapp-dd-charts-demo
 
-
-# cd eapp-dd-charts-demo
-# npm install
+```
+cd eapp-dd-charts-demo
+npm install
+```
