@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dd-charts": "^1.0.3"
+    "dd-charts": "^1.0.4"
   }
 }
