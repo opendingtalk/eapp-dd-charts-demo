@@ -106,74 +106,68 @@ const chartDataNew = [
 Page({
     data:{
        width:200,
-       height:200
+       height:200,
+       chart: null,
     },
     onLoad(){
-        let me = this
-        setTimeout(function(){
-            me.chart = chart
-        }.bind(this),500)
-
-        setTimeout(function(){
-            me.chart.clear()
-            me.chart.source(chartDataNew, {
-                date: {
-                    range: [ 0, 1 ],
-                    type: 'timeCat',
-                    mask: 'MM-DD'
-                },
-                value: {
-                    max: 300,
-                    tickCount: 4
-                }
-            })
-            me.chart.tooltip({
-                showCrosshairs: true,
-                custom: true, // 自定义 tooltip 内容框
-                onChange(obj) {
-                    const legend = chart.get('legendController').legends.top[0];
-                    const tooltipItems = obj.items;
-                    const legendItems = legend.items;
-                    const map = {};
-                    legendItems.map(item => {
-                        map[item.name] = Object.assign({}, item);
-                    });
-                    tooltipItems.map(item => {
-                        const { name, value } = item;
-                        if (map[name]) {
-                        map[name].value = value;
-                        }
-                    });
-                    legend.setItems(Object.values(map));
-                },
-                onHide() {
-                    const legend = chart.get('legendController').legends.top[0];
-                    legend.setItems(chart.getLegendItems().country);
-                }
-            });
-            me.chart.axis('date', {
-                label(text, index, total) {
-                const textCfg = {};
-                if (index === 0) {
-                    textCfg.textAlign = 'left';
-                }
-                if (index === total - 1) {
-                    textCfg.textAlign = 'right';
-                }
-                return textCfg;
-                }
-            });
-            me.chart.area().position('date*value').color('city').adjust('stack');
-            me.chart.line().position('date*value').color('city').adjust('stack');
-            me.chart.render()
-        }.bind(this),1000)
+        
     },
     onReady(){
-        setTimeout(function(){
-            this.chart = chart
-        }.bind(this),500)
+       
     },
     onDraw(ddChart){
-        chart = ddChart
+        //dd-charts组件内部会回调此方法，返回图表实例ddChart
+        //提示：可以把异步获取数据及渲染图表逻辑放onDraw回调里面
+        ddChart.clear()
+        ddChart.source(chartDataNew, {
+            date: {
+                range: [ 0, 1 ],
+                type: 'timeCat',
+                mask: 'MM-DD'
+            },
+            value: {
+                max: 300,
+                tickCount: 4
+            }
+        })
+        ddChart.tooltip({
+            showCrosshairs: true,
+            custom: true, // 自定义 tooltip 内容框
+            onChange(obj) {
+                const legend = chart.get('legendController').legends.top[0];
+                const tooltipItems = obj.items;
+                const legendItems = legend.items;
+                const map = {};
+                legendItems.map(item => {
+                    map[item.name] = Object.assign({}, item);
+                });
+                tooltipItems.map(item => {
+                    const { name, value } = item;
+                    if (map[name]) {
+                    map[name].value = value;
+                    }
+                });
+                legend.setItems(Object.values(map));
+            },
+            onHide() {
+                const legend = chart.get('legendController').legends.top[0];
+                legend.setItems(chart.getLegendItems().country);
+            }
+        });
+        ddChart.axis('date', {
+            label(text, index, total) {
+            const textCfg = {};
+            if (index === 0) {
+                textCfg.textAlign = 'left';
+            }
+            if (index === total - 1) {
+                textCfg.textAlign = 'right';
+            }
+            return textCfg;
+            }
+        });
+        ddChart.area().position('date*value').color('city').adjust('stack');
+        ddChart.line().position('date*value').color('city').adjust('stack');
+        ddChart.render()
     }
 })
