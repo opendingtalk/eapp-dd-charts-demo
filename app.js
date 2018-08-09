@@ -5,12 +5,12 @@ App({
     console.log('SDKVersion', dd.SDKVersion);
   },
   onShow() {
-    console.log('App Show');
+    this.globalData.sysInfo = dd.getSystemInfoSync()
   },
   onHide() {
     console.log('App Hide');
   },
   globalData: {
-    hasLogin: false,
+    sysInfo: {}
   },
 });

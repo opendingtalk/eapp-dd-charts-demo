@@ -1,0 +1,5 @@
+
+<view >
+  <dd-charts canvasId="ddchart-dom-bar2" onDraw="onDraw2"></dd-charts>
+  <dd-charts canvasId="ddchart-dom-bar1" onDraw="onDraw1"></dd-charts>
+</view>

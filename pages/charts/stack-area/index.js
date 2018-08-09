@@ -1,5 +1,3 @@
-const app = getApp()
-let chart = null
 
 const chartDataNew = [
     { value: 63.4, city: 'New York', date: '2018-10-01' },
@@ -103,6 +101,8 @@ const chartDataNew = [
     { value: 71, city: 'Austin', date: '2018-11-02' }
 ]
 
+let app = getApp()
+
 Page({
     data:{
        width:200,
@@ -110,7 +110,11 @@ Page({
        chart: null,
     },
     onLoad(){
-        
+        let sysInfo = app.globalData.sysInfo
+        this.setData({
+            width: sysInfo.screenWidth,
+            height: sysInfo.screenHeight,
+        })
     },
     onReady(){
        

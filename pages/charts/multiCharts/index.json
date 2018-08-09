@@ -1,0 +1,5 @@
+{
+    "usingComponents":{
+        "dd-charts": "dd-charts/es/f2/index"
+    }
+}

@@ -1,5 +1,8 @@
-require('@alipay/appx-compiler/lib/sjsEnvInit');
+
 require('./config$');
+require('./importScripts$');
+function success() {
+require('../..//app');
 require('../../node_modules/dd-charts/es/f2/index');
 require('../../pages/index/index');
 require('../../pages/charts/stack-area/index');
@@ -18,3 +21,5 @@ require('../../pages/charts/double-axis/index');
 require('../../pages/charts/k/index');
 require('../../pages/charts/multiCharts/index');
 require('../../pages/charts/radial-bar/index');
+}
+self.bootstrapApp ? self.bootstrapApp({ success }) : success();
