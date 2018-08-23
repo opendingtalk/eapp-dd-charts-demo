@@ -4,9 +4,9 @@
 
 ##下载钉钉E应用开发IDE  
 
-[IDE for Mac](https://download.alicdn.com/dingtalk-desktop/miniAppIDE/miniAppIDE-0.21.0-beta.11.dmg)  
+[IDE for Mac](http://p.tb.cn/rmsportal_14757__E5_B0_8F_E7_A8_8B_E5_BA_8F_E5_BC_80_E5_8F_91_E8_80_85_E5_B7_A5_E5_85_B7-0.22.0-beta.4.pkg.zip)  
 
-[IDE for Windows](https://download.alicdn.com/dingtalk-desktop/miniAppIDE/miniAppIDE-0.21.0-beta.11.exe)
+[IDE for Windows](http://p.tb.cn/rmsportal_15106__E5_B0_8F_E7_A8_8B_E5_BA_8F_E5_BC_80_E5_8F_91_E8_80_85_E5_B7_A5_E5_85_B7-0.22.0-beta.4.zip)
 
 
 ##开始使用DEMO
